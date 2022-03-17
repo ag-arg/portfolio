@@ -8,7 +8,7 @@ Using dbt, I transformed raw Actblue tables into more insightful summary models 
 
 ## Reporting and Anaylsis: Fundraising Reporting
 
-Using Hex, the models I created in dbt, intermediate SQL and some basic python, I made an end of the year fundraising report that bought insights into our fundraising efforts. 
+Using Hex and the models I created in dbt, I made an end of the year fundraising report that bought insights into our fundraising efforts. In addition to general trends like total amount raised per year and per month, I also focused on identifying which channels and which amount range brought in the most donations. 
 
 ## Dashboarding: Training Attendence
 
