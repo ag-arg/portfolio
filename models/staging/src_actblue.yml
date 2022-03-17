@@ -1,0 +1,59 @@
+
+version: 2
+
+sources:
+  - name: actblue
+    schema: tmc_ab
+    description: Actblue data
+    tables:
+      - name: cancellations
+        identifier: sun_cancellations
+        description: Every cancelled recurring donor
+        columns:
+          - name: cancelled_at
+            description: The time a recurring donation was cancelled
+
+      - name: donations
+        identifier: sun_donations
+        description: Every donation through Actblue
+        columns:
+          - name: donation_id
+            description: A unique ID for a donation
+
+          - name: committee_name
+            description: The committee the donation was for. Note- For the C4, the committeename from the source data used to be ‘Sunrise’ but now it is “Sunrise Movement’, this has been accounted for in this table
+
+          - name: amount
+            description: Amount donated
+
+          - name: contribution_form
+            description: The form that a contribution came from
+
+          - name: ref_code
+            description: A sourcing code that is used to track where a donation came from
+
+          - name: is_recurring
+            description: Boolean of whether a donation is from a recurring donation
+
+          - name: recurring_duration
+            description: The number of recurring period’s left before a recurring donation ends. If there is no end date, it is ‘infinite’. If it is a one time donation, it is ‘1’.
+
+          - name: recurring_period
+            description: The period that the donation repeats. Options are ‘once’, ‘weekly’, and 'monthly'
+
+          - name: order_number
+            description: An ID for the initial donation. A recurring donation will have the same order number as the first donation.
+
+          - name: paid_at
+            description: The time the specific donation was paid. It is unique for recurring donations.
+
+          - name: created_at
+            description: The time a donation was created. A recurring donation will have the same ‘createdat’ for every donation thereafter.
+
+
+      - name: refunds
+        identifier: sun_refunds
+        description: Refunds for Actblue donations
+        columns:
+          - name: refunded_at
+            description: The time a payment was refunded
