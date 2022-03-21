@@ -8,9 +8,9 @@ Using dbt, I transformed raw Actblue tables into more insightful summary models 
 
 ## [Reporting and Anaylsis: Fundraising Reporting](https://github.com/ag-arg/portfolio/tree/main/fundraising_report)
 
-Using Hex and the models I created in dbt, I made an end of the year fundraising report that bought insights into our fundraising efforts. In addition to general trends like total amount raised per year and per month, I also focused on identifying which channels and which amount range brought in the most donations. Although I can't share the analysis part of the report, you can view some of my code.
+Using the models I created in dbt, I made an end of the year fundraising report in Hex that bought insights into our fundraising efforts. In addition to general trends like total amount raised per year and per month, I also focused on identifying which channels and which amount range brought in the most donations. Although I can't share the analysis part of the report, you can view some of my code here.
 
-## Dashboarding: Training Attendence
+## Dashboarding: Training and Coaching Program
 
-Using Periscope, I created a dashboard that 
+Using Periscope, I created a dashboard that tracked participation in a training and coaching program. Metrics included number of RSVPs and attendees for each training, as well as the demographic breakdown of participants. This helped organizers track and make interventions to achieve their recruitment goals.
 
