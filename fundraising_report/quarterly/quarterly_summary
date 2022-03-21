@@ -1,0 +1,32 @@
+with donations as (
+  select * from  sunrise_dbt.donations
+),
+
+quarterly_fundraising_summary as (
+    select
+      date_trunc('quarter', paid_at::date) as quarter_date_at,
+      date_part(quarter, paid_at::date) as quarter,
+      sum(amount) as total_amount,
+      count(distinct email) as total_donors,
+      count(donation_id) as num_contributions,
+      avg(amount) as avg_donation,
+      (num_contributions::decimal / total_donors::decimal)::float as avg_contributions
+    from donations
+    where quarter_date_at like '%2021%'
+    group by 1,2
+    order by 2
+  )
+
+  select 
+    case 
+      when quarter = 1 then '1'
+      when quarter = 2 then '2'
+      when quarter = 3 then '3'
+      when quarter = 4 then '4'
+      else null end as quarter,
+    total_amount,
+    num_contributions,
+    total_donors,
+    avg_donation,
+    avg_contributions
+  from quarterly_fundraising_summary
